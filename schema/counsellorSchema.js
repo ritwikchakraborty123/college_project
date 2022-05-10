@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const studentSchema = new mongoose.Schema({
+const counsellorSchema = new mongoose.Schema({
   name: {
     type: String,
   },
@@ -18,6 +18,6 @@ const studentSchema = new mongoose.Schema({
     type: String,
   },
 });
-const studentModel = mongoose.model("STUDENT", studentSchema);
+const counsellorModel = mongoose.model("COUNSELLOR", counsellorSchema);
 
-module.exports = studentModel;
+module.exports = counsellorModel;
