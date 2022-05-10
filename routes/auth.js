@@ -21,6 +21,19 @@ router.post("/student", async (req, res) => {
     res.status(500).send(err.message);
   }
 });
+router.post("/login/student", async (req, res) => {
+  try {
+    const response = await studentSchema.findOne({ email: req.body.email });
+    if (response) {
+      if (response.password == req.body.password) res.send("success");
+      else res.status(500).send("wrong credentials");
+    } else {
+      res.status(500).send("student doesn't exist");
+    }
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
 router.post("/college", async (req, res) => {
   try {
     const response = await collegeSchema.findOne({ email: req.body.email });
@@ -30,6 +43,19 @@ router.post("/college", async (req, res) => {
       const college = new collegeSchema(req.body);
       await college.save();
       res.send("success");
+    }
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
+router.post("/login/college", async (req, res) => {
+  try {
+    const response = await collegeSchema.findOne({ email: req.body.email });
+    if (response) {
+      if (response.password == req.body.password) res.send("success");
+      else res.status(500).send("wrong credentials");
+    } else {
+      res.status(500).send("college doesn't exist");
     }
   } catch (err) {
     res.status(500).send(err.message);
@@ -49,5 +75,17 @@ router.post("/counsellor", async (req, res) => {
     res.status(500).send(err.message);
   }
 });
-
+router.post("/login/counsellor", async (req, res) => {
+  try {
+    const response = await counsellorSchema.findOne({ email: req.body.email });
+    if (response) {
+      if (response.password == req.body.password) res.send("success");
+      else res.status(500).send("wrong credentials");
+    } else {
+      res.status(500).send("counsellor doesn't exist");
+    }
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
 module.exports = router;
