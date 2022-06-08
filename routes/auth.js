@@ -5,7 +5,7 @@ const collegeSchema = require("../schema/collegeSchema");
 const counsellorSchema = require("../schema/counsellorSchema");
 
 router.get("/", (req, res) => {
-  res.send("hometest");
+  res.send("home");
 });
 router.post("/student", async (req, res) => {
   try {
