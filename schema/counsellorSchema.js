@@ -17,6 +17,9 @@ const counsellorSchema = new mongoose.Schema({
   specialization: {
     type: String,
   },
+  location: {
+    type: String,
+  },
 });
 const counsellorModel = mongoose.model("COUNSELLOR", counsellorSchema);
 
