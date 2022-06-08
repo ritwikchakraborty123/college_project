@@ -7,7 +7,7 @@ require("./connection");
 app.use(express.json());
 app.use(require("./routes/auth"));
 app.use(require("./routes/getDetails"));
-
-app.listen(3000, () => {
+let port = process.env.PORT || 3000;
+app.listen(port, () => {
   console.log("server started..");
 });
