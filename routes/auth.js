@@ -25,7 +25,7 @@ router.post("/login/student", async (req, res) => {
   try {
     const response = await studentSchema.findOne({ email: req.body.email });
     if (response) {
-      if (response.password == req.body.password) res.send("success");
+      if (response.password == req.body.password) res.send(response);
       else res.status(500).send("wrong credentials");
     } else {
       res.status(500).send("student doesn't exist");
@@ -52,7 +52,7 @@ router.post("/login/college", async (req, res) => {
   try {
     const response = await collegeSchema.findOne({ email: req.body.email });
     if (response) {
-      if (response.password == req.body.password) res.send("success");
+      if (response.password == req.body.password) res.send(response);
       else res.status(500).send("wrong credentials");
     } else {
       res.status(500).send("college doesn't exist");
@@ -79,7 +79,7 @@ router.post("/login/counsellor", async (req, res) => {
   try {
     const response = await counsellorSchema.findOne({ email: req.body.email });
     if (response) {
-      if (response.password == req.body.password) res.send("success");
+      if (response.password == req.body.password) res.send(response);
       else res.status(500).send("wrong credentials");
     } else {
       res.status(500).send("counsellor doesn't exist");
