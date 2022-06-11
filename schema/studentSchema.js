@@ -14,7 +14,10 @@ const studentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  specialization: {
+  areaofinterest: {
+    type: String,
+  },
+  location: {
     type: String,
   },
 });

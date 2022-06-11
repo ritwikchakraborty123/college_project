@@ -10,8 +10,8 @@ router.get("/student", async (req, res) => {
     if (response) {
       let resList = [];
       response.forEach((e) => {
-        let { name, email, specialization, contact } = e;
-        resList.push({ name, email, specialization, contact });
+        let { name, email, areaofinterest, location, contact } = e;
+        resList.push({ name, email, areaofinterest, location, contact });
       });
       res.json(resList);
     } else {
@@ -26,8 +26,8 @@ router.get("/student/:email", async (req, res) => {
   try {
     const response = await studentSchema.findOne({ email: req.params.email });
     if (response) {
-      let { name, email, specialization, contact } = response;
-      res.json({ name, specialization, email, contact });
+      let { name, email, areaofinterest, location, contact } = response;
+      res.json({ name, email, areaofinterest, location, contact });
     } else {
       res.status(500).send("student doesn't exist");
     }
@@ -41,8 +41,8 @@ router.get("/college", async (req, res) => {
     if (response) {
       let resList = [];
       response.forEach((e) => {
-        let { collegeName, location, email, specialization, contact } = e;
-        resList.push({ collegeName, location, email, specialization, contact });
+        let { name, location, email, domain, contact } = e;
+        resList.push({ name, location, email, domain, contact });
       });
       res.json(resList);
     } else {
@@ -56,8 +56,8 @@ router.get("/college/:email", async (req, res) => {
   try {
     const response = await collegeSchema.findOne({ email: req.params.email });
     if (response) {
-      let { collegeName, location, email, specialization, contact } = response;
-      res.json({ collegeName, location, specialization, email, contact });
+      let { name, location, email, domain, contact } = response;
+      res.json({ name, location, email, domain, contact });
     } else {
       res.status(500).send("student doesn't exist");
     }
@@ -71,8 +71,8 @@ router.get("/counsellor", async (req, res) => {
     if (response) {
       let resList = [];
       response.forEach((e) => {
-        let { name, location, email, specialization, contact } = e;
-        resList.push({ name, location, email, specialization, contact });
+        let { name, location, email, domain, contact } = e;
+        resList.push({ name, location, email, domain, contact });
       });
       res.json(resList);
     } else {
@@ -88,8 +88,8 @@ router.get("/counsellor/:email", async (req, res) => {
       email: req.params.email,
     });
     if (response) {
-      let { name, location, email, specialization, contact } = response;
-      res.json({ name, location, specialization, email, contact });
+      let { name, location, email, domain, contact } = response;
+      res.json({ name, location, domain, email, contact });
     } else {
       res.status(500).send("student doesn't exist");
     }

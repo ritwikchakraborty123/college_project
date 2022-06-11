@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 const collegeSchema = new mongoose.Schema({
-  collegeName: {
+  name: {
     type: String,
   },
   location: {
     type: String,
   },
-  specialization: {
+  domain: {
     type: String,
   },
   email: {

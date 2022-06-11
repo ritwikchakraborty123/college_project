@@ -14,7 +14,7 @@ const counsellorSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  specialization: {
+  domain: {
     type: String,
   },
   location: {
