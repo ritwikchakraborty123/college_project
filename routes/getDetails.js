@@ -3,6 +3,8 @@ const router = express.Router();
 const studentSchema = require("../schema/studentSchema");
 const collegeSchema = require("../schema/collegeSchema");
 const counsellorSchema = require("../schema/counsellorSchema");
+const userCounsellorRatingSchema = require("../schema/userCounsellorRatingSchema");
+const userCollegeRatingSchema = require("../schema/userCollegeRatingSchema");
 
 router.get("/student", async (req, res) => {
   try {
@@ -90,6 +92,34 @@ router.get("/counsellor/:email", async (req, res) => {
     if (response) {
       let { name, location, email, domain, contact } = response;
       res.json({ name, location, domain, email, contact });
+    } else {
+      res.status(500).send("student doesn't exist");
+    }
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
+router.get("/collegerating/:email", async (req, res) => {
+  try {
+    const response = await userCollegeRatingSchema.find({
+      collegeEmail: req.params.email,
+    });
+    if (response) {
+      res.json(response);
+    } else {
+      res.status(500).send("college rating doesn't exist");
+    }
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
+router.get("/counsellorrating/:email", async (req, res) => {
+  try {
+    const response = await userCounsellorRatingSchema.find({
+      counsellorEmail: req.params.email,
+    });
+    if (response) {
+      res.json(response);
     } else {
       res.status(500).send("student doesn't exist");
     }

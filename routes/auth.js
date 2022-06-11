@@ -3,6 +3,8 @@ const router = express.Router();
 const studentSchema = require("../schema/studentSchema");
 const collegeSchema = require("../schema/collegeSchema");
 const counsellorSchema = require("../schema/counsellorSchema");
+const userCollegeRatingSchema = require("../schema/userCollegeRatingSchema");
+const userCounsellorRatingSchema = require("../schema/userCounsellorRatingSchema");
 
 router.get("/", (req, res) => {
   res.send("home");
@@ -71,6 +73,24 @@ router.post("/counsellor", async (req, res) => {
       await counsellor.save();
       res.send("success");
     }
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
+router.post("/collegerating", async (req, res) => {
+  try {
+    const counsellor = new userCollegeRatingSchema(req.body);
+    await counsellor.save();
+    res.send("success");
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+});
+router.post("/counsellorrating", async (req, res) => {
+  try {
+    const counsellor = new userCounsellorRatingSchema(req.body);
+    await counsellor.save();
+    res.send("success");
   } catch (err) {
     res.status(500).send(err.message);
   }
