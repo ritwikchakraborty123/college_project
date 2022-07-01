@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "14c48336-8c69-47a4-b575-58bdb1426c48",
+		"name": "class",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://finalyearcollegeproject.herokuapp.com/student",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://finalyearcollegeproject.herokuapp.com/counsellor",
+					"protocol": "https",
+					"host": [
+						"finalyearcollegeproject",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"counsellor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://finalyearcollegeproject.herokuapp.com/student/ritwik@boringenw",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://finalyearcollegeproject.herokuapp.com/student/ritwik@boringenw",
+					"protocol": "https",
+					"host": [
+						"finalyearcollegeproject",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"student",
+						"ritwik@boringenw"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://finalyearcollegeproject.herokuapp.com/college",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://finalyearcollegeproject.herokuapp.com/college",
+					"protocol": "https",
+					"host": [
+						"finalyearcollegeproject",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"college"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://finalyearcollegeproject.herokuapp.com/counsellor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://finalyearcollegeproject.herokuapp.com/counsellor",
+					"protocol": "https",
+					"host": [
+						"finalyearcollegeproject",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"counsellor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://finalyearcollegeproject.herokuapp.com/login/student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"atanu\",\r\n    \"email\":\"atanu@gmail.com\",\r\n    \"contact\":12345,\r\n    \"password\":\"1234\",\r\n    \"specialization\":\"CSE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://finalyearcollegeproject.herokuapp.com/counsellor",
+					"protocol": "https",
+					"host": [
+						"finalyearcollegeproject",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"counsellor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://finalyearcollegeproject.herokuapp.com/login/student",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\":\"soumen@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://finalyearcollegeproject.herokuapp.com/login/student",
+					"protocol": "https",
+					"host": [
+						"finalyearcollegeproject",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"login",
+						"student"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
